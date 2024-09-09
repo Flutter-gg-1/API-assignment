@@ -1,4 +1,5 @@
 import 'package:api_lab/networking/network_api.dart';
+import 'package:api_lab/widgets/cards/post_card.dart';
 import 'package:flutter/material.dart';
 
 class PostScreen extends StatelessWidget {
@@ -30,18 +31,9 @@ class PostScreen extends StatelessWidget {
             }
             return ListView.builder(
                 itemBuilder: (context, index) {
-                  return Container(
-                    margin: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: kElevationToShadow[2],
-                    ),
-                    child: ListTile(
-                      title: Text(post.data![index].title,
-                          style: const TextStyle(fontWeight: FontWeight.bold)),
-                      subtitle: Text(post.data![index].body),
-                    ),
-                  );
+                  return PostCard(
+                      title: post.data![index].title,
+                      content: post.data![index].body);
                 },
                 itemCount: post.data!.length);
           }),
