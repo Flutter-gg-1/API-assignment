@@ -12,7 +12,7 @@ class UserDataScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-              final api = ApiNetworking();
+    final api = ApiNetworking();
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -25,7 +25,9 @@ class UserDataScreen extends StatelessWidget {
           centerTitle: true,
           bottom: const TabBar(
             labelColor: Colors.white,
-            indicatorColor: Colors.transparent,
+            indicatorColor: Colors.green,
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicatorWeight: 5,
             unselectedLabelColor: Colors.white30,
             overlayColor: WidgetStatePropertyAll(Colors.transparent),
             labelPadding: EdgeInsets.symmetric(vertical: 10),
@@ -50,9 +52,22 @@ class UserDataScreen extends StatelessWidget {
                     }
                   }
                   return const LoadingIndicatorWidget(text: "Loading Posts ....");
-      }
-    ),
-              UserPhotosWidget(user: user!),
+                }
+              ),
+              FutureBuilder(
+                future: api.getUserPhotos(userId: user!.id),
+                builder: (context, response) {
+                  if(response.connectionState == ConnectionState.done) {
+                    if(response.hasData==false) {
+                      return Center(child: Text("No Photos Found", style: TextStyle(color: mainColor)));
+                    }
+                    else {
+                      return UserPhotosWidget(photos: response.data);
+                    }
+                  }
+                  return const LoadingIndicatorWidget(text: "Loading Photos ....");
+                }
+              ),
             ],
           ),
         ),
