@@ -1,35 +1,20 @@
-import 'dart:convert';
-
 import 'package:api_test/networking/network_mgr.dart';
 import 'package:http/http.dart' as http;
 
 import '../../model/user.dart';
+import '../utils/from_json.dart';
 
 mixin UserMethodApi on NetworkMgr {
   List<User> users = [];
 
   Future<void> fetchUsers() async {
-    final response = await http.get(Uri.parse(baseUrl + EndPoint.users.name));
+    final response =
+        await http.get(Uri.parse(endPointPath(endPoint: EndPoint.users)));
     var jsonString = response.body;
 
-    users = await JsonConverter.readItems(
+    users = await FromJson.decodeItems(
         responseBody: jsonString, fromJson: (json) => User.fromJson(json));
-  }
-}
 
-class JsonConverter {
-  static Future<List<T>> readItems<T>({
-    required String responseBody,
-    required T Function(Map<String, dynamic>) fromJson,
-  }) async {
-    if (responseBody.isEmpty) {
-      return [];
-    } else {
-      var jsonResult = json.decode(responseBody);
-      List<T> objects = (jsonResult != null)
-          ? List<T>.from(jsonResult.map((jsonItem) => fromJson(jsonItem)))
-          : [];
-      return objects;
-    }
+    users.length;
   }
 }

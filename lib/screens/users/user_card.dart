@@ -1,31 +1,6 @@
-import 'package:api_test/networking/networking_api.dart';
 import 'package:flutter/material.dart';
 
-import '../model/user.dart';
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final networkApi = NetworkingApi();
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: FutureBuilder(
-              future: networkApi.fetchUsers(),
-              builder: (context, data) {
-                return ListView(
-                    children: networkApi.users
-                        .map((user) => UserCard(user: user))
-                        .toList());
-              }),
-        ),
-      ),
-    );
-  }
-}
+import '../../model/user.dart';
 
 class UserCard extends StatelessWidget {
   const UserCard({super.key, required this.user});
@@ -46,7 +21,7 @@ class UserCard extends StatelessWidget {
                 Text('ID: ${user.id.toString()}'),
               ],
             ),
-            Divider(),
+            const Divider(),
             Text('Email: ${user.email}'),
             Text('Phone: ${user.phone}')
           ],
