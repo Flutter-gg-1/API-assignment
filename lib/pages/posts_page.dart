@@ -1,6 +1,5 @@
 import 'package:api_assignment/api/networking_api.dart';
 import 'package:api_assignment/models/post/post_model.dart';
-import 'package:api_assignment/models/user/user_model.dart';
 import 'package:flutter/material.dart';
 
 class PostsPage extends StatelessWidget {
@@ -10,6 +9,10 @@ class PostsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     NetworkingApi networkApi = NetworkingApi();
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Posts"),
+        centerTitle: true,
+      ),
       body: Center(
         child: FutureBuilder<List<PostModel>>(
           future: networkApi.getUserPosts(),

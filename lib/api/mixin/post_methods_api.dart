@@ -18,12 +18,8 @@ mixin PostMethodsApi on Constants {
 
   Future<List<PostModel>> getUserPosts() async {
     List<PostModel> posts = await getAllPosts();
-    List<PostModel> userPosts = [];
-    for (var post in posts) {
-      if (post.userId == 1) {
-        userPosts.add(post);
-      }
-    }
+    List<PostModel> userPosts =
+        List.from(posts.where((post) => post.userId == 1));
     return userPosts;
   }
 }
