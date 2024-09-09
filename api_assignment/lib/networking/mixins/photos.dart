@@ -1,3 +1,7 @@
 import 'package:api_assignment/networking/api_constant.dart';
 
-mixin PhotosApi on ApiConstant {}
+mixin PhotosApi on ApiConstant {
+  display10OnlyOfPhotos(){
+    
+  }
+}

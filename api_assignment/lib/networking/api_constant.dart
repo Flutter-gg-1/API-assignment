@@ -1,15 +1,15 @@
 class ApiConstant {
-  static const String baseUrl = "https://jsonplaceholder.typicode.com";
+  final String baseUrl = "https://jsonplaceholder.typicode.com";
 
-  static const String posts = "/posts";
+  final String postsEndpoint = "/posts";
 
-  static const String comments = "/comments";
+  final String commentsEndpoint = "/comments";
 
-  static const String users = "/users";
+  final String usersEndpoint = "/users";
 
-  static const String albums = "/albums";
+  final String albumsEndpoint = "/albums";
 
-  static const String photos = "/photos";
+  final String photosEndpoint = "/photos";
 
-  static const String todos = "/todos";
+  final String todosEndpoint = "/todos";
 }
