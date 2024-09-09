@@ -7,10 +7,10 @@ import 'package:http/http.dart' as http;
 mixin UserMethod on ConstentNetworking {
   Future<List<UserModel>> getAllUsers() async {
     final response = await http.get(Uri.parse("$url$userEndoint"));
-    List<Map<String, dynamic>> body =
+    List<Map<String, dynamic>> responseAsList =
         List.from(jsonDecode(response.body)).cast<Map<String, dynamic>>();
     List<UserModel> allUsers = [];
-    for (var element in body) {
+    for (var element in responseAsList) {
       allUsers.add(UserModel.fromJson(element));
     }
     return allUsers;

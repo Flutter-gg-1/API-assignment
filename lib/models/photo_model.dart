@@ -1,5 +1,5 @@
-class AutoGenerate {
-  AutoGenerate({
+class PhotoModel {
+  PhotoModel({
     required this.albumId,
     required this.id,
     required this.title,
@@ -12,7 +12,7 @@ class AutoGenerate {
   late final String url;
   late final String thumbnailUrl;
   
-  AutoGenerate.fromJson(Map<String, dynamic> json){
+  PhotoModel.fromJson(Map<String, dynamic> json){
     albumId = json['albumId'];
     id = json['id'];
     title = json['title'];
