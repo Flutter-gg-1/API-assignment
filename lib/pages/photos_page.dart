@@ -41,7 +41,7 @@ class PhotosPage extends StatelessWidget {
                     },
                   ),
                 ),
-              SizedBox(height: 100,),
+              const SizedBox(height: 100,),
               ],
             ),
           ),
