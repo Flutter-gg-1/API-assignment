@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
 
             return ListView.builder(
               shrinkWrap: true,
-              itemCount: 10,
+              itemCount: user.data!.length,
               itemBuilder: (context, index) {
                 return UserCard(
                   userName: user.data?[index].username ?? "",
@@ -56,7 +56,9 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => PostScreen(),
+                          builder: (context) => PostScreen(
+                              name: user.data?[index].name ?? "",
+                              userId: user.data![index].id),
                         ));
                   },
                 );
