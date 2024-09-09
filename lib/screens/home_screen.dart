@@ -1,4 +1,4 @@
-import 'package:api_assignment/extensions/screen_size.dart';
+import 'package:api_assignment/widgets/user_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -20,35 +20,11 @@ class HomeScreen extends StatelessWidget {
           const Text("Click on a user card to view their data", style: TextStyle(fontSize: 18)),
           const SizedBox(height: 10),
           Expanded(
-            child: ListView(
-              children: [
-                Container(
-            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(boxShadow: [BoxShadow(color: Color(0xff6a9c89), blurRadius: 3, offset: Offset(2, 2))],borderRadius: BorderRadius.circular(20), color: Color(0xff6a9c89)),
-            width: context.getWidth(),
-            height: context.getHeight(divideBy: 8),
-            child: Row(
-              children: [
-                Column(
-                  children: [
-                    Text("1", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),)
-                  ],
-                ),
-                SizedBox(width: 10,),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Name of user wow", style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18, color: Colors.white),),
-                    Text("data", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),),
-                    Text("data", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),),
-                    Text("data", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),),
-                  ],
-                )
-              ],
-            )
-          ),
-              ],
+            child: ListView.builder(
+              itemCount: 8,
+              itemBuilder: (context, index) {
+                return const UserCard();
+              },
             ),
           ),
         ],
