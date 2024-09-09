@@ -1,8 +1,6 @@
 import 'dart:math';
-
 import 'package:api_assignment/widgets/display_user_details.dart';
 import 'package:api_assignment/models/user%20model/user.dart';
-import 'package:api_assignment/services/screen.dart';
 import 'package:flutter/material.dart';
 
 class DisplayUser extends StatelessWidget {
@@ -14,9 +12,7 @@ class DisplayUser extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 8),
-        height: context.getHeight() / 2.3,
-        width: context.getWidth(),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             gradient: LinearGradient(
@@ -29,10 +25,12 @@ class DisplayUser extends StatelessWidget {
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               DisplayUserDetails(
                 label: 'ID',
                 details: '${user.id}',
+                isId: true,
               ),
               DisplayUserDetails(
                 label: 'Name',
