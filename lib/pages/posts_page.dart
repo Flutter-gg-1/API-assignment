@@ -1,4 +1,5 @@
 import 'package:api_assignment/api/networking_api.dart';
+import 'package:api_assignment/models/post/post_model.dart';
 import 'package:api_assignment/models/user/user_model.dart';
 import 'package:flutter/material.dart';
 
@@ -10,9 +11,9 @@ class PostsPage extends StatelessWidget {
     NetworkingApi networkApi = NetworkingApi();
     return Scaffold(
       body: Center(
-        child: FutureBuilder<List<UserModel>>(
-          future: networkApi.getAllUsers(),
-          builder: (context, AsyncSnapshot<List<UserModel>> data) {
+        child: FutureBuilder<List<PostModel>>(
+          future: networkApi.getUserPosts(),
+          builder: (context, AsyncSnapshot<List<PostModel>> data) {
             if (data.connectionState == ConnectionState.waiting) {
               return const CircularProgressIndicator();
             }
@@ -32,7 +33,7 @@ class PostsPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                            child: Text(e.name),
+                            child: Text(e.title),
                           ),
                         ),
                       );
