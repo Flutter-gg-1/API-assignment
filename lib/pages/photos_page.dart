@@ -1,4 +1,6 @@
 import 'package:api_assignment/api/networking_api.dart';
+import 'package:api_assignment/pages/posts_page.dart';
+import 'package:api_assignment/pages/users_page.dart';
 import 'package:flutter/material.dart';
 
 class PhotosPage extends StatelessWidget {
@@ -12,27 +14,69 @@ class PhotosPage extends StatelessWidget {
         title: const Text("Photos"),
         centerTitle: true,
       ),
-      body: Center(
-        child: FutureBuilder(
-          future: networkingApi.getAllPhotos(),
-          builder: (context, data) {
-            if (data.connectionState == ConnectionState.waiting) {
-              return const CircularProgressIndicator();
-            }
-            if (data.hasData) {
-              return SingleChildScrollView(
-                child: Column(
-                  children: data.data!.map((photo) {
-                    return Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Image.network(photo.thumbnailUrl));
-                  }).toList(),
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Center(
+                  child: FutureBuilder(
+                    future: networkingApi.getAllPhotos(),
+                    builder: (context, data) {
+                      if (data.connectionState == ConnectionState.waiting) {
+                        return const CircularProgressIndicator();
+                      }
+                      if (data.hasData) {
+                        return SingleChildScrollView(
+                          child: Column(
+                            children: data.data!.map((photo) {
+                              return Padding(
+                                  padding: const EdgeInsets.all(5),
+                                  child: Image.network(photo.thumbnailUrl));
+                            }).toList(),
+                          ),
+                        );
+                      }
+                      return const Text("no data");
+                    },
+                  ),
                 ),
-              );
-            }
-            return const Text("no data");
-          },
-        ),
+              SizedBox(height: 100,),
+              ],
+            ),
+          ),
+          Positioned(
+              bottom: 0,
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 100,
+
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const PostsPage()));
+                        },
+                        child: const Text("Posts")),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const UsersPage()));
+                        },
+                        child: const Text("Users")),
+                  ],
+                ),
+              ))
+        ],
       ),
     );
   }
