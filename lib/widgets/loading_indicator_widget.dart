@@ -3,7 +3,8 @@ import 'package:api_assignment/ui_constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class LoadingIndicatorWidget extends StatelessWidget {
-  const LoadingIndicatorWidget({super.key});
+  final String text;
+  const LoadingIndicatorWidget({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class LoadingIndicatorWidget extends StatelessWidget {
           children: [
             CircularProgressIndicator(color: mainColor),
             const SizedBox(height: 20),
-            Text("Loading Users ....", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600,color: mainColor))
+            Text(text, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600,color: mainColor))
           ],
         ),
       ),

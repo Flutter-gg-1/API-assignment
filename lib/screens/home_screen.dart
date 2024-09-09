@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                     Expanded(
                       child: ListView.builder(
                       itemCount: users?.length,
-                      itemBuilder: (context, index) => UserCard(user : users?[index], onPressed: ()=> context.push(to: const UserDataScreen()))
+                      itemBuilder: (context, index) => UserCard(user : users?[index], onPressed: ()=> context.push(to: UserDataScreen(user: users?[index])))
                       ),
                     ),
                   ],
@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                 Center(child: Text("No Users Found", style: TextStyle(color: mainColor)));
               }
             }
-            return const LoadingIndicatorWidget();
+            return const LoadingIndicatorWidget(text: "Loading Users ....",);
           }
         )
       ),
