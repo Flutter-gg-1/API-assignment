@@ -11,36 +11,39 @@ class PostsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final api = locator.get<ApiNetworking>();
     return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'userId: $userId',
+            style: const TextStyle(
+                decoration: TextDecoration.underline,
+                fontSize: 24,
+                fontWeight: FontWeight.bold),
+          ),
+          centerTitle: true,
+        ),
         body: SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-        child: FutureBuilder(
-            future: api.getAllPosts(userId: 1),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(child: CircularProgressIndicator());
-              }
-              if (snapshot.hasData) {
-                return SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            'userId: $userId',
-                            style: const TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.bold),
-                          )),
-                      ...List.generate(snapshot.data!.length, (index) {
-                        return DisplayPosts(post: snapshot.data![index]);
-                      })
-                    ],
-                  ),
-                );
-              }
-              return const Center(child: Text('No data is found'));
-            }),
-      ),
-    ));
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+            child: FutureBuilder(
+                future: api.getAllPosts(userId: 1),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                  if (snapshot.hasData) {
+                    return SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          ...List.generate(snapshot.data!.length, (index) {
+                            return DisplayPosts(post: snapshot.data![index]);
+                          })
+                        ],
+                      ),
+                    );
+                  }
+                  return const Center(child: Text('No data is found'));
+                }),
+          ),
+        ));
   }
 }
