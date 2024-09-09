@@ -8,7 +8,7 @@ The application will have 3 views:
 
 ## Requirements:
 1. Create a Flutter project and install http package.
-2. Create "model" files, if exist.
+2. Create "model" files.
 3. Create a "networking" folder to organize endpoints.
 4. Implement pages to present data from api.
 
