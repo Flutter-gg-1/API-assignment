@@ -1,5 +1,3 @@
-import 'package:api_assignment/pages/photos_page.dart';
-import 'package:api_assignment/pages/posts_page.dart';
 import 'package:api_assignment/pages/users_page.dart';
 import 'package:flutter/material.dart';
 
