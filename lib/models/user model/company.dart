@@ -2,7 +2,7 @@ class Company {
   final String name;
   final String catchPhrase;
   final String bs;
-  
+
   Company({
     required this.name,
     required this.catchPhrase,
@@ -23,5 +23,10 @@ class Company {
       'catchPhrase': catchPhrase,
       'bs': bs,
     };
+  }
+
+  @override
+  String toString() {
+    return 'Name: $name\nCatchPhrase: $catchPhrase\nbs: $bs';
   }
 }

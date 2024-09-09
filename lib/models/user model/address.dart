@@ -1,12 +1,12 @@
 import 'package:api_assignment/models/user%20model/address_geolocation.dart';
 
 class Address {
-    final String street;
+  final String street;
   final String suite;
   final String city;
   final String zipcode;
   final AddressGeo geo;
-  
+
   Address({
     required this.street,
     required this.suite,
@@ -36,5 +36,10 @@ class Address {
       'zipcode': zipcode,
       'geo': geo.toJson(),
     };
+  }
+
+  @override
+  String toString() {
+    return 'Street: $street\nSuite: $suite\nCity: $city\nZipcode: $zipcode\nGeo Location: ${geo.toJson()}';
   }
 }
