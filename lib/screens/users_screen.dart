@@ -1,24 +1,16 @@
-import 'package:api_assignment/display_user.dart';
+import 'package:api_assignment/widgets/display_user.dart';
 import 'package:api_assignment/networking/api_networking.dart';
+import 'package:api_assignment/services/setup.dart';
 import 'package:flutter/material.dart';
+
 
 class UsersScreen extends StatelessWidget {
   const UsersScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final api = ApiNetworking();
+    final api = locator.get<ApiNetworking>();
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Users',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          centerTitle: true,
-        ),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),

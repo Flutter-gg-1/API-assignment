@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:api_assignment/display_user_details.dart';
+import 'package:api_assignment/widgets/display_user_details.dart';
 import 'package:api_assignment/models/user%20model/user.dart';
 import 'package:api_assignment/services/screen.dart';
 import 'package:flutter/material.dart';

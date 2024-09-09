@@ -9,7 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  get_it: ^7.7.0
   http: ^1.2.2
+  stacked_list_carousel: ^1.0.1
 
 dev_dependencies:
   flutter_test:
