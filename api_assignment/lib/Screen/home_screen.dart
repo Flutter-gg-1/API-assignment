@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: const SafeArea(
-        child: Text('Home Screen'),
+        child: Center(child: Text('Home Screen')),
       ),
     );
   }
