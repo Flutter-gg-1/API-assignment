@@ -1,4 +1,4 @@
-import 'package:api_assignment/model/geo.dart';
+import 'package:api_assignment/model/user/geo.dart';
 
 class Address {
   Address({

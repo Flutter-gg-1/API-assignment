@@ -1,5 +1,5 @@
-import 'package:api_assignment/model/address.dart';
-import 'package:api_assignment/model/company.dart';
+import 'package:api_assignment/model/user/company.dart';
+import 'package:api_assignment/model/user/address.dart';
 
 class UserModel {
   UserModel({

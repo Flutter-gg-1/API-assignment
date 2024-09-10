@@ -1,18 +1,22 @@
 import 'dart:convert';
 
+import 'package:api_assignment/model/photo_model.dart';
 import 'package:api_assignment/networking/api_constant.dart';
 import 'package:http/http.dart' as http;
 
 mixin PhotosApi on ApiConstant {
-  display10OnlyOfPhotos() async {
-    final respond = await http.get(Uri.parse(baseUrl + photosEndpoint));
-    List<Map<String, dynamic>> respondData =
-        List.from(jsonDecode(respond.body)).cast<Map<String, dynamic>>();
-    respondData = respondData.sublist(0, 10);
-    List<Map<String, dynamic>> dataList = [];
-    for (var element in respondData) {
-      dataList.add(element);
-      print(dataList[0]['url']);
+  List<PhotosModel> allPhotos = [];
+  Future<List<PhotosModel>> displayAllPhotos() async {
+    // 1- Convert URL to URI
+    final uri = Uri.parse('$baseUrl$photosEndpoint');
+    // 2- Send Request(GET, POST, PUT, DELETE)
+    final response = await http.get(uri);
+    // 3- Decode Response String to JSON(Map)
+    final responseDecoded = jsonDecode(response.body);
+    // 4- Convert JSON(Map) to Model(Object)
+    for (var element in responseDecoded) {
+      allPhotos.add(PhotosModel.fromJson(element));
     }
+    return allPhotos;
   }
 }

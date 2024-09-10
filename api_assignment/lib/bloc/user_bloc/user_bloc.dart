@@ -1,4 +1,4 @@
-import 'package:api_assignment/model/user_model.dart';
+import 'package:api_assignment/model/user/user_model.dart';
 import 'package:api_assignment/networking/api_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
