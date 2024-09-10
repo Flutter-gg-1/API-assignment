@@ -10,10 +10,15 @@ class HomeScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => NavBloc(),
       child: Builder(builder: (context) {
+        final bloc = BlocProvider.of<NavBloc>(context);
         return BlocBuilder<NavBloc, NavState>(
           builder: (context, state) {
             return Scaffold(
               bottomNavigationBar: BottomNavigationBar(
+                currentIndex: bloc.currentIndex,
+                onTap: (index) {
+                  bloc.add(ChangePagesEvent(index:index));
+                },
                 items: const <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
                     icon: Icon(Icons.verified_user),
@@ -29,9 +34,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              body: const SafeArea(
-                child: Center(child: Text('Home Screen')),
-              ),
+              body: bloc.pages.elementAt(bloc.currentIndex),
             );
           },
         );
