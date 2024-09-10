@@ -6,37 +6,43 @@ This Flutter project is using a jsonplaceholder API to test and practice integra
 
 ## Features
 
-- Display Users
-- View user's posts
-- View each post's comments
-- View images in a separate page
+- Display Users: Fetch and display a list of users.
+- View user's posts: Navigate to a list of posts for each user.
+- View post's comments: See comments for each post in a bottom sheet.
+- View images: Browse through a carousel of random photos.
 
 # Work
 
 ## CustomNavigation
-- This Widget is the start of the app, it serves as a homescreen to redirect user to desired page via bottom navigation bar.
-- NavBloc is used here for state management
+- The main navigation widget with a bottom navigation bar.
+- Uses NavBloc for managing page navigation state.
 
 ## UsersScreen
-- This Screen displays all users, each user's info are contained in a container alongside a button to view posts
-- users information are requested from API via getIt, and the result are displayed in a FutureBuilder
+- Displays a list of users fetched from the API.
+- Each user item has a button to view their posts.
+- Uses FutureBuilder to handle asynchronous data loading.
 
 ## PhotosScreen
-- The Photos Screen displays 10 random photos from API
-- Used an optional parameter {List<int>? photosIndexes} in getAllPhotos method instead of creating another method.
+- Displays 10 random photos using a carousel widget.
+- Fetches photos based on random indices for variety.
+- Uses the StackedListCarousel package for the carousel display.
+- Optional Parameter {List<int>? photosIndexes}: A list of photo IDs to fetch specific photos. If not provided, all photos are fetched.
 
 ## PostsScreen
-- This screen shows all posts of a specific user, based on userId.
-- The same way, I used an optional parameter {int? userId} to get only one user's posts.
-- Each post contains a text button "see all comments".
-- PostBloc is used here to handle the event of pressing the textButton
-- Comments for each post are displayed in a bottom sheet (using BlocListener and showModalBottomSheet)
+- Shows all posts of a specific user, based on userId.
+- Each post includes a button to view comments.
+- Uses PostBloc for state management to handle the display of comments.
+- Optional Parameter {int? userId}: Filter posts by this user ID. If not provided, all posts are fetched.
 
 ## Helper Files and Packages
 
+### blocs
+- NavBloc: Manages the navigation between different screens.
+- PostBloc: Handles state changes related to displaying post comments.
+
 ### Services
-- screen.dart --> to access context height and width
-- setup.dart --> to access GetIt locator and ApiNetworking
+- screen.dart --> for context-related attributes (height and width)
+- setup.dart --> for dependency injection using GetIt.
 
 ### Custom Widgets
 - To organize code and make it easier to read and maintain
@@ -47,6 +53,13 @@ This Flutter project is using a jsonplaceholder API to test and practice integra
 - http: ^1.2.2
 - stacked_list_carousel: ^1.0.1
 
+### Code structure
+
+- ApiConstants: Contains API endpoint constants.
+- ApiNetworking: Handles API requests and responses.
+- Models: Includes data models for users, posts, comments, photos, albums and todos.
+- Screens: Contains UI screens for users, posts, and photos.
+- Widgets: Custom widgets to display user information and posts.
 
 ## GIF
 
