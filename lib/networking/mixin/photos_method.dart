@@ -9,8 +9,8 @@ mixin PhotosMethod on ConstantNetworking{
     final response = await http.get(Uri.parse(url + photosEndpoint));
     List<Map<String, dynamic>> photosData = List.from(jsonDecode(response.body)).cast<Map<String, dynamic>>();
     List<PhotoModel> photos = [];
-    for (var element in photosData) {
-      photos.add(PhotoModel.fromJson(element));
+    for (int i=0; i< 10; i++) {
+      photos.add(PhotoModel.fromJson(photosData[i]));
     }
     return photos;
   }

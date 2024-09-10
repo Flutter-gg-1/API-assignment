@@ -1,43 +1,23 @@
-import 'package:api_assignment/networking/networking_api.dart';
-import 'package:crystal_navigation_bar/crystal_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+import '../networking/networking_api.dart';
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
+class PostsSreen extends StatelessWidget {
+  const PostsSreen({super.key});
 
-class _HomeScreenState extends State<HomeScreen> {
-  final api = NetworkingApi();
-  int selectIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final api = NetworkingApi();
     return Scaffold(
-      extendBody: true,
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 85, 30, 63),
         title: const Text(
-          "Users",
+          "Posts",
           style: TextStyle(color: Colors.white),
         ),
       ),
-      bottomNavigationBar: CrystalNavigationBar(
-          unselectedItemColor: Colors.white70,
-          backgroundColor: Colors.black.withOpacity(0.1),
-          currentIndex: selectIndex,
-          onTap: (p0) {
-            selectIndex = p0;
-            setState(() {});
-          },
-          items: [
-            CrystalNavigationBarItem(icon: Icons.person),
-            CrystalNavigationBarItem(icon: Icons.photo_rounded),
-            CrystalNavigationBarItem(icon: Icons.post_add_rounded),
-          ]),
       body: FutureBuilder(
-          future: api.getAllUsers(),
+          future: api.getAllposts(),
           builder: (context, dataFromMethod) {
             if (dataFromMethod.hasData) {
               return ListView(
@@ -62,10 +42,30 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("Name: ${e.name}"),
-                                    Text("UserName: ${e.username}"),
-                                    Text("Email: ${e.email}"),
-                                    Text("Phone: ${e.phone}"),
+                                    Text(
+                                      "User ID: ${e.userId}",
+                                      style: const TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      "ID: ${e.id}",
+                                      style: const TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    Text(
+                                      "Title: ${e.title}",
+                                      style: const TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    Text(
+                                      "Body: ${e.body}",
+                                      style: const TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500),
+                                    ),
                                   ],
                                 ),
                               ),
