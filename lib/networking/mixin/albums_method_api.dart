@@ -19,10 +19,6 @@ mixin AlbumsMethodApi on ConstantNetowkring {
       List<AlbumsModel> albums =
           filteredAlbums.map((e) => AlbumsModel.fromJson(e)).toList();
 
-      for (var album in albums) {
-        print(album.title);
-      }
-
       return albums;
     } else {
       throw Exception('Failed to load albums');

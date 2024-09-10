@@ -1,8 +1,4 @@
-import 'dart:math';
-
 import 'package:class_11/models/albums.dart';
-import 'package:class_11/models/photos.dart';
-import 'package:class_11/models/users_model.dart';
 import 'package:class_11/networking/api_network.dart';
 import 'package:flutter/material.dart';
 
