@@ -1,4 +1,4 @@
-import 'package:api_assignment/screens/home_screen.dart';
+import 'package:api_assignment/screens/bottom_nav_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: BottomNavScreen(),
     );
   }
 }

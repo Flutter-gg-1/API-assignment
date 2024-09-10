@@ -5,14 +5,14 @@ import 'photos_screen.dart';
 import 'posts_sreen.dart';
 import 'users_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class BottomNavScreen extends StatefulWidget {
+  const BottomNavScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<BottomNavScreen> createState() => _BottomNavScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _BottomNavScreenState extends State<BottomNavScreen> {
   int selectIndex = 0;
   List screens = [
     const UsersScreen(),
