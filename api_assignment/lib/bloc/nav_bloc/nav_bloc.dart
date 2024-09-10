@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../core/all_file.dart';
+import '../../core/all_file.dart';
 
 part 'nav_event.dart';
 part 'nav_state.dart';
