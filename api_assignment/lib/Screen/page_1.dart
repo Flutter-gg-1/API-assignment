@@ -6,7 +6,7 @@ class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: const Color.fromARGB(255, 160, 138, 71),
       body: Container(),
     );
   }

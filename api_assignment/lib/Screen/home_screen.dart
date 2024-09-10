@@ -1,4 +1,5 @@
 import 'package:api_assignment/bloc_nav/nav_bloc.dart';
+import 'package:api_assignment/core/all_file.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,8 +18,11 @@ class HomeScreen extends StatelessWidget {
               bottomNavigationBar: BottomNavigationBar(
                 currentIndex: bloc.currentIndex,
                 onTap: (index) {
-                  bloc.add(ChangePagesEvent(index:index));
+                  bloc.add(ChangePagesEvent(index: index));
                 },
+                backgroundColor: AppColor.primaryColor,
+                selectedItemColor: Colors.white,
+                unselectedItemColor: Colors.white38,
                 items: const <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
                     icon: Icon(Icons.verified_user),
