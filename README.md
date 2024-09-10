@@ -50,6 +50,8 @@ This Flutter project is using a jsonplaceholder API to test and practice integra
 
 ## GIF
 
+<img src="./assets/images/api_gif.gif" width="364" height="800">
+
 ## Help
 If you encounter any issues:
 - Make sure you have all the necessary dart files within the project
