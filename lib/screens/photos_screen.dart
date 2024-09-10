@@ -26,7 +26,6 @@ class PhotosScreen extends StatelessWidget {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(child: CircularProgressIndicator());
               }
-
               if (snapshot.hasData) {
                 return StackedListCarousel<Photo>(
                   items: snapshot.data!,

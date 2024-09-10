@@ -13,7 +13,7 @@ class PostsScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            'userId: $userId',
+            'User\'s posts - ID: $userId',
             style: const TextStyle(
                 decoration: TextDecoration.underline,
                 fontSize: 24,
