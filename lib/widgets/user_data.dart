@@ -11,12 +11,12 @@ class UserDataWidget extends StatelessWidget {
         height: 450,
         width: double.infinity,
         padding: const EdgeInsets.all(16.0),
-        color: const Color.fromARGB(255, 245, 237, 209),
+        color: const Color.fromARGB(255, 252, 240, 233),
         child: ListTile(
           title: Text(
             user.name,
             style: const TextStyle(
-                color: Color.fromARGB(255, 255, 191, 0),
+                color: Color.fromARGB(255, 255, 153, 0),
                 fontWeight: FontWeight.bold),
           ),
           subtitle: Column(

@@ -4,12 +4,12 @@ part of 'userposts_bloc.dart';
 sealed class UserPostsState {}
 
 final class UserPostsInitial extends UserPostsState {}
-final class LoadPostsInitial extends UserPostsState {}
-final class SuccessPostsInitial extends UserPostsState {
+final class LoadPostsState extends UserPostsState {}
+final class SuccessPostsState extends UserPostsState {
   final List<PostModel> posts;
-  SuccessPostsInitial({required this.posts});
+  SuccessPostsState({required this.posts});
 }
-final class ErrorPostsInitial extends UserPostsState {
+final class ErrorPostsState extends UserPostsState {
   final String msg;
-  ErrorPostsInitial({required this.msg});
+  ErrorPostsState({required this.msg});
 }

@@ -17,11 +17,11 @@ class UserPostsBloc extends Bloc<UserPostsEvent, UserPostsState> {
   FutureOr<void> userPostsMethod(
       GetUserPostsEvent event, Emitter<UserPostsState> emit) async {
     try {
-      emit(LoadPostsInitial());
+      emit(LoadPostsState());
       list = await api.getAllUserPosts();
-      emit(SuccessPostsInitial(posts: list));
+      emit(SuccessPostsState(posts: list));
     } catch (error) {
-      emit(ErrorPostsInitial(msg: "Something wents wrong"));
+      emit(ErrorPostsState(msg: "Something wents wrong"));
     }
   }
 }

@@ -19,25 +19,14 @@ class UsersScreen extends StatelessWidget {
         final bloc = context.read<UsersBlockBloc>();
         bloc.add(GetUserEvent());
         return Scaffold(
-          backgroundColor: const Color.fromARGB(255, 238, 233, 217),
-          appBar: AppBar(
-            backgroundColor: const Color.fromARGB(255, 234, 221, 179),
-            title: const Text("All Users"),
-            actions: [
-              IconButton(
-                  onPressed: () {
-                    bloc.add(GetUserEvent());
-                  },
-                  icon: const Icon(Icons.replay_outlined))
-            ],
-          ),
+          
           body: Center(child: SingleChildScrollView(
               child: BlocBuilder<UsersBlockBloc, UsersBlockState>(
             builder: (context, state) {
               if (state is LoadingState) {
                 return const Center(
                   child: CircularProgressIndicator(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 );
               }
@@ -48,7 +37,7 @@ class UsersScreen extends StatelessWidget {
                     return Card(
                         margin: const EdgeInsets.symmetric(
                             horizontal: 30, vertical: 5),
-                        color: const Color.fromARGB(255, 242, 201, 80),
+                        color: const Color.fromARGB(255, 247, 180, 104),
                         child: ListTile(
                           title: Text(state.users[index].name),
                           subtitle: Column(
