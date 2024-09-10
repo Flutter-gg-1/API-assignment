@@ -1,11 +1,10 @@
 import 'dart:convert';
-
-import 'package:api_lab/model/user_model.dart';
-import 'package:api_lab/networking/constant_networking.dart';
+import 'package:api_project/model/user_model.dart';
+import 'package:api_project/networking/constant_networking.dart';
 import 'package:http/http.dart' as http;
 
 mixin UserMethodApi on ConstantNetworking {
-  var userrr = 'aaa';
+
   Future<List<UserModel>> getAllUser() async {
     final response = await http.get(Uri.parse(baseUrl + usersEndPoint));
     List<Map<String,dynamic>> userList = 

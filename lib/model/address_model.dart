@@ -1,5 +1,6 @@
 
-import 'package:api_lab/model/geo_model.dart';
+
+import 'package:api_project/model/geo_model.dart';
 
 class AddressModel {
   AddressModel({
