@@ -13,11 +13,9 @@ class PostCard extends StatelessWidget {
         boxShadow: kElevationToShadow[2],
       ),
       child: ListTile(
-        title: Text(title,
-            style: const TextStyle(fontWeight: FontWeight.bold)),
+        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
         subtitle: Text(content),
       ),
     );
-    ;
   }
 }

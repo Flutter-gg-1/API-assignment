@@ -29,13 +29,20 @@ class PostScreen extends StatelessWidget {
                 color: Colors.white,
               ));
             }
-            return ListView.builder(
+            if (post.hasData) {
+                 return ListView.builder(
                 itemBuilder: (context, index) {
                   return PostCard(
                       title: post.data![index].title,
                       content: post.data![index].body);
                 },
                 itemCount: post.data!.length);
+            }
+           return const Center(
+                child: Text(
+              "Someting went wrong",
+              style: TextStyle(fontSize: 20),
+            ));
           }),
     );
   }

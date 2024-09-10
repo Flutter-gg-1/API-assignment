@@ -44,26 +44,32 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.white,
               ));
             }
-
-            return ListView.builder(
-              shrinkWrap: true,
-              itemCount: user.data!.length,
-              itemBuilder: (context, index) {
-                return UserCard(
-                  userName: user.data?[index].username ?? "",
-                  name: user.data?[index].name ?? "",
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => PostScreen(
-                              name: user.data?[index].name ?? "",
-                              userId: user.data![index].id),
-                        ));
-                  },
-                );
-              },
-            );
+            if (user.hasData) {
+              return ListView.builder(
+                shrinkWrap: true,
+                itemCount: user.data!.length,
+                itemBuilder: (context, index) {
+                  return UserCard(
+                    userName: user.data?[index].username ?? "",
+                    name: user.data?[index].name ?? "",
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PostScreen(
+                                name: user.data?[index].name ?? "",
+                                userId: user.data![index].id),
+                          ));
+                    },
+                  );
+                },
+              );
+            }
+            return const Center(
+                child: Text(
+              "Someting went wrong",
+              style: TextStyle(fontSize: 20),
+            ));
           }),
     );
   }

@@ -25,7 +25,8 @@ class PhotosScreen extends StatelessWidget {
                 color: Colors.white,
               ));
             }
-            return GridView.builder(
+            if (photo.hasData) {
+                return GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisSpacing: 8, mainAxisSpacing: 8, crossAxisCount: 2),
                 addSemanticIndexes: true,
@@ -34,6 +35,12 @@ class PhotosScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Image.network(photo.data![index].url);
                 });
+            }
+             return const Center(
+                child: Text(
+              "Someting went wrong",
+              style: TextStyle(fontSize: 20),
+            ));
           },
         ));
   }
