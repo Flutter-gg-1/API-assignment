@@ -7,8 +7,9 @@ import 'package:http/http.dart' as http;
 
 mixin CommentApiClient on ApiConstants{
 
-  Future<List<Comment>> getAllComments() async {
-    final response = await http.get(Uri.parse('$baseurl$commentsEndpoint'));
+  Future<List<Comment>> getAllComments({required int postId}) async {
+    final String postsCommentEndpoint = '?postId=$postId';
+    final response = await http.get(Uri.parse('$baseurl$commentsEndpoint$postsCommentEndpoint'));
 
     List commentsData =
         List.from(jsonDecode(response.body)).cast<Map<String, dynamic>>();

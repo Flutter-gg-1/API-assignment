@@ -31,15 +31,11 @@ class PostsScreen extends StatelessWidget {
                     return const Center(child: CircularProgressIndicator());
                   }
                   if (snapshot.hasData) {
-                    return SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          ...List.generate(snapshot.data!.length, (index) {
-                            return DisplayPosts(post: snapshot.data![index]);
-                          })
-                        ],
-                      ),
-                    );
+                    return ListView.builder(
+                        itemCount: snapshot.data!.length,
+                        itemBuilder: (context, index) {
+                          return DisplayPosts(post: snapshot.data![index]);
+                        });
                   }
                   return const Center(child: Text('No data is found'));
                 }),
