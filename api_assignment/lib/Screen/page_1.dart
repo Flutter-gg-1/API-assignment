@@ -7,7 +7,18 @@ class Page1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 160, 138, 71),
-      body: Container(),
+      body: ListView(
+        children: const <Widget>[
+          Card(
+            child: ListTile(
+              title: Text('Page 1'),
+              subtitle: Text('This is page 1'),
+              leading: Icon(Icons.verified_user),
+              trailing: Icon(Icons.verified_user),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
