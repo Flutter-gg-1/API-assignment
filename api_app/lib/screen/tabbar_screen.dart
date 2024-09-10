@@ -1,4 +1,5 @@
 import 'package:api_app/screen/photo_screen.dart';
+import 'package:api_app/screen/post_screen.dart';
 import 'package:api_app/screen/users_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class TabbarScreen extends StatelessWidget {
           ]),
         ),
         body:
-            TabBarView(children: [UsersScreen(), PhotoScreen(), UsersScreen()]),
+            TabBarView(children: [UsersScreen(), PhotoScreen(), PostScreen()]),
       ),
     );
   }

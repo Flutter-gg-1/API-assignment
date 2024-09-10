@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/user_bloc/user_bloc.dart';
+import '../blocs/user_bloc/user_bloc.dart';
 
 class UsersScreen extends StatelessWidget {
   const UsersScreen({super.key});
