@@ -15,7 +15,7 @@ class HomeCardView extends StatelessWidget {
     return InkWell(
       onTap: () => _navigate(context),
       child: Card(
-        elevation: 4,
+        elevation: 2,
         child: Center(
           child: Text(
             homeCard.name,

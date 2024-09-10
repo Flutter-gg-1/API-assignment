@@ -13,11 +13,19 @@ mixin PhotosMethodApi on NetworkMgr {
   void previous() => start == 0 ? start : start -= 10;
 
   Future<void> fetchPhotos() async {
-    final response = await http.get(Uri.parse(
-        endPointPath(endPoint: EndPoint.photos, start: start, limit: limit)));
+    final response = await http.get(Uri.parse(endPointPath(
+        endPoint: EndPoint.photos, params: getPhotosParams(start, limit))));
     var jsonString = response.body;
 
     photos = await FromJson.decodeItems(
         responseBody: jsonString, fromJson: (json) => Photo.fromJson(json));
+  }
+
+  String getPhotosParams(int? start, int? limit) {
+    var result = '';
+    result += (start == null) ? '' : '_start=$start&';
+    result += (limit == null) ? '' : '_limit=$limit';
+    result = '?$result'.trim();
+    return result;
   }
 }
