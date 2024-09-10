@@ -4,14 +4,18 @@ import 'package:api_assignment/networking/api_constant.dart';
 import 'package:http/http.dart' as http;
 
 mixin UsersApi on ApiConstant {
-  displayAllUsers() async {
-    final respond = await http.get(Uri.parse(baseUrl + usersEndpoint));
-    List<Map<String, dynamic>> respondData =
-        List.from(jsonDecode(respond.body)).cast<Map<String, dynamic>>();
-    List<UserModel> users = [];
-    for (var element in respondData) {
-      users.add(UserModel.fromJson(element));
+  List<UserModel> allUsers = [];
+  Future<List<UserModel>> displayAllUsers() async {
+    // 1- Convert URL to URI
+    final uri = Uri.parse('$baseUrl$usersEndpoint');
+    // 2- Send Request(GET, POST, PUT, DELETE)
+    final response = await http.get(uri);
+    // 3- Decode Response String to JSON(Map)
+    final responseDecoded = jsonDecode(response.body);
+    // 4- Convert JSON(Map) to Model(Object)
+    for (var element in responseDecoded) {
+      allUsers.add(UserModel.fromJson(element));
     }
-    return users;
+    return allUsers;
   }
 }

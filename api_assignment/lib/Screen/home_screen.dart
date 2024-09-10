@@ -1,4 +1,4 @@
-import 'package:api_assignment/bloc/nav_bloc.dart';
+import 'package:api_assignment/bloc_nav/nav_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
