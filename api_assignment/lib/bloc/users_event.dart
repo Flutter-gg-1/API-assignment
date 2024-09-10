@@ -6,3 +6,5 @@ sealed class UsersEvent {}
 class GetUserEvent extends UsersEvent{}
 
 class GetPhotoEvent extends UsersEvent{}
+
+class GetPostsEvent extends UsersEvent {}

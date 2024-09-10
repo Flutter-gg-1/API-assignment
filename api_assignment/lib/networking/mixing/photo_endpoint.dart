@@ -5,27 +5,6 @@ import 'package:api_assignment/models/user_model.dart';
 import 'package:api_assignment/networking/const_networking.dart';
 import 'package:http/http.dart' as http;
 
-// mixin PhotoEndpointApi on ConstNetwork {
-//   Future<List<PhotoModel>> getPhoto() async {
-//     List<PhotoModel> charList = [];
-// //1-
-//     final uri = Uri.parse("$url$photoEndpoint");
-
-// //2-
-//     final response = await http.get(uri);
-
-// //3-
-//     // final decode = jsonDecode(response.body);
-//     final decode = jsonDecode(response.body);
-
-//     List<Map<String, dynamic>> newList =
-//         List.from(decode).cast<Map<String, dynamic>>();
-//     for (var element in newList) {
-//       charList.add(PhotoModel.fromJson(element));
-//     }
-//     return charList;
-//   }
-// }
 
 
 mixin PhotoEndpointApi on ConstNetwork {

@@ -14,10 +14,15 @@ class ErrorState extends UsersState {
 
 class ShowUserState extends UsersState {
   final List<UserModel> listUser;
-  ShowUserState( this.listUser);
+  ShowUserState(this.listUser);
 }
 
 class ShowPhotoState extends UsersState {
   final List<PhotoModel> listPhoto;
-  ShowPhotoState( this.listPhoto);
+  ShowPhotoState(this.listPhoto);
+}
+
+class ShowPostState extends UsersState {
+  final List<PostModel> postList;
+  ShowPostState(this.postList);
 }
