@@ -24,9 +24,9 @@ class Page1 extends StatelessWidget {
                 (index) => Card(
                   child: ListTile(
                     title: Text(bloc.api.allUsers[index].name),
-                    subtitle: const Text('This is page 1'),
-                    leading: const Icon(Icons.verified_user),
-                    trailing: const Icon(Icons.verified_user),
+                    subtitle: Text(bloc.api.allUsers[index].username),
+                    leading: Text(bloc.api.allUsers[index].id.toString()),
+                    trailing: Text(bloc.api.allUsers[index].phone),
                   ),
                 ),
               ));
