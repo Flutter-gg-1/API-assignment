@@ -5,19 +5,14 @@ import '../../model/post.dart';
 import '../utils/from_json.dart';
 
 mixin PostMethodApi on NetworkMgr {
-  List<Post> posts = [];
-  int? userId;
-
-  Future<void> fetchPosts() async {
-    final response = await http.get(Uri.parse(
-        endPointPath(endPoint: EndPoint.posts, params: getPostsParams())));
+  Future<List<Post>> fetchPosts({String? params}) async {
+    final response = await http
+        .get(Uri.parse(endPointPath(endPoint: EndPoint.posts, params: params)));
     var jsonString = response.body;
 
-    posts = await FromJson.decodeItems(
+    var posts = await FromJson.decodeItems(
         responseBody: jsonString, fromJson: (json) => Post.fromJson(json));
-  }
 
-  String getPostsParams() {
-    return userId == null ? '' : '?userId=$userId';
+    return posts;
   }
 }

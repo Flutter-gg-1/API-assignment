@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import '../../model/photo.dart';
 
@@ -22,8 +23,15 @@ class PhotoCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: AspectRatio(
-                  aspectRatio: 1,
-                  child: Image.network(photo.url, fit: BoxFit.cover)),
+                aspectRatio: 1,
+                child: CachedNetworkImage(
+                  imageUrl: photo.thumbnailUrl,
+                  progressIndicatorBuilder: (context, url, downloadProgress) =>
+                      CircularProgressIndicator(
+                          value: downloadProgress.progress),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                ),
+              ),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

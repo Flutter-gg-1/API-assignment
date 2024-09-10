@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../photos/photos_screen.dart';
-import '../posts/posts_screen.dart';
-import '../users/users_screen.dart';
+import '../photos/photo_bloc/photos_screen.dart';
+import '../posts/post_bloc/posts_screen.dart';
+import '../users/user_bloc/users_screen.dart';
 
 class HomeCardView extends StatelessWidget {
   const HomeCardView({super.key, required this.homeCard});
