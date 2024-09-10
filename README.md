@@ -3,7 +3,7 @@
 ## Overview
 
 ### Purpose
-The purpose of this app is to practice on API the api that used in project from [text](https://jsonplaceholder.typicode.com/).
+The purpose of this app is to practice on API the api that used in project from [JSONPlaceholder](https://jsonplaceholder.typicode.com/).
 
 ### Features
 
@@ -57,5 +57,5 @@ The purpose of this app is to practice on API the api that used in project from 
 ![alt text](assets/readme/image-2.png)
 ![alt text](assets/readme/image-1.png)
 
-
+##
 Fill free to use
