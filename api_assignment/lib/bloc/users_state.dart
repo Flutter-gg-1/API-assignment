@@ -16,3 +16,8 @@ class ShowUserState extends UsersState {
   final List<UserModel> listUser;
   ShowUserState( this.listUser);
 }
+
+class ShowPhotoState extends UsersState {
+  final List<PhotoModel> listPhoto;
+  ShowPhotoState( this.listPhoto);
+}

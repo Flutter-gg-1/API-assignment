@@ -4,3 +4,5 @@ part of 'users_bloc.dart';
 sealed class UsersEvent {}
 
 class GetUserEvent extends UsersEvent{}
+
+class GetPhotoEvent extends UsersEvent{}
