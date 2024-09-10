@@ -1,3 +1,4 @@
+
 import 'package:api_project/model/photo_model.dart';
 import 'package:api_project/model/post_model.dart';
 import 'package:api_project/model/user_model.dart';
@@ -19,24 +20,28 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       try {
         emit(LoadingState());
         users = await api.getAllUser();
+
         emit(ShowUserSucessfullyState(users: users));
       } catch (erorr) {
         emit(ErrorState(msg: '$erorr'));
       }
     });
-    on<ShowPhotoEvent>((event, emit) async{
-            try {
+    on<ShowPhotoEvent>((event, emit) async {
+      try {
         emit(LoadingState());
-        photos = await api.getOnlyCustomQuantityOfPhoto(quantity: event.quantity);
+        photos =
+            await api.getOnlyCustomQuantityOfPhoto(quantity: event.quantity);
+
         emit(ShowPhotoSucessfullyState(photos: photos));
       } catch (erorr) {
         emit(ErrorState(msg: '$erorr'));
       }
     });
-    on<ShowPostEvent>((event, emit) async{
-            try {
+    on<ShowPostEvent>((event, emit) async {
+      try {
         emit(LoadingState());
         posts = await api.getPost(id: event.id);
+
         emit(ShowPostSucessfullyState(posts: posts));
       } catch (erorr) {
         emit(ErrorState(msg: '$erorr'));

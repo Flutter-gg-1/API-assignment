@@ -11,7 +11,7 @@ mixin PostMethodApi on ConstantNetworking {
         List.from(jsonDecode(response.body)).cast<Map<String, dynamic>>();
     PostModel post = PostModel();
     for (var element in postList) {
-      if (element["id"]) {
+      if (element["id"]==id) {
         post = PostModel.fromJson(element);
       }
     }
