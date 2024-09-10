@@ -50,6 +50,9 @@ This Flutter project is using a jsonplaceholder API to test and practice integra
 
 ## GIF
 
+![api_gif](https://github.com/user-attachments/assets/aafc0304-d312-4461-b480-474a642d8b92)
+
+
 ## Help
 If you encounter any issues:
 - Make sure you have all the necessary dart files within the project
