@@ -38,7 +38,7 @@ $ cd repo-name
 $ code .
 
 # Run the project 
-$ dart run
+$ flutter run
 ```
 
 ## Contributing
