@@ -4,3 +4,8 @@ part of 'Photos_bloc.dart';
 sealed class PhotosState {}
 
 final class PhotosInitial extends PhotosState {}
+
+final class ShowPhotosState extends PhotosState {
+  List<PhotosModel> allPhotos = [];
+  ShowPhotosState({required this.allPhotos});
+}
