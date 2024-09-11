@@ -26,15 +26,15 @@ class HomeScreen extends StatelessWidget {
                 items: const <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
                     icon: Icon(Icons.verified_user),
-                    label: 'Home',
+                    label: 'User',
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.photo),
-                    label: 'Home',
+                    label: 'Photos',
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.photo_library),
-                    label: 'Home',
+                    label: 'Photos By User Id',
                   ),
                 ],
               ),

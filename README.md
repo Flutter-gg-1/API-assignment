@@ -1,16 +1,6 @@
-[API will used here](https://jsonplaceholder.typicode.com)
+## using API with Bloc
 
-In this assignment, you will get data from free api.
-The application will have 3 views:
-1. View for display all users
-2. View for display <ins>10 only</ins> of photos
-3. View for display posts <ins>only if userId == 1</ins>.
+Application using fake api with bloc to show how to use api with bloc in flutter
 
-## Requirements:
-1. Create a Flutter project and install http package.
-2. Create "model" files.
-3. Create a "networking" folder to organize endpoints.
-4. Implement pages to present data from api.
-
-## Note:
-Submission will be on Wednesday at 10:00 am.
+![Image](1.png)
+![Image](2.png)
