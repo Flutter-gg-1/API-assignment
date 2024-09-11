@@ -1,4 +1,3 @@
-
 class UserModel {
   UserModel({
     required this.id,
@@ -18,8 +17,8 @@ class UserModel {
   late final String phone;
   late final String website;
   late final Company company;
-  
-  UserModel.fromJson(Map<String, dynamic> json){
+
+  UserModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     username = json['username'];
@@ -31,16 +30,16 @@ class UserModel {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['id'] = id;
-    _data['name'] = name;
-    _data['username'] = username;
-    _data['email'] = email;
-    _data['address'] = address.toJson();
-    _data['phone'] = phone;
-    _data['website'] = website;
-    _data['company'] = company.toJson();
-    return _data;
+    final data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['username'] = username;
+    data['email'] = email;
+    data['address'] = address.toJson();
+    data['phone'] = phone;
+    data['website'] = website;
+    data['company'] = company.toJson();
+    return data;
   }
 }
 
@@ -57,8 +56,8 @@ class Address {
   late final String city;
   late final String zipcode;
   late final Geo geo;
-  
-  Address.fromJson(Map<String, dynamic> json){
+
+  Address.fromJson(Map<String, dynamic> json) {
     street = json['street'];
     suite = json['suite'];
     city = json['city'];
@@ -67,13 +66,13 @@ class Address {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['street'] = street;
-    _data['suite'] = suite;
-    _data['city'] = city;
-    _data['zipcode'] = zipcode;
-    _data['geo'] = geo.toJson();
-    return _data;
+    final data = <String, dynamic>{};
+    data['street'] = street;
+    data['suite'] = suite;
+    data['city'] = city;
+    data['zipcode'] = zipcode;
+    data['geo'] = geo.toJson();
+    return data;
   }
 }
 
@@ -84,17 +83,17 @@ class Geo {
   });
   late final String lat;
   late final String lng;
-  
-  Geo.fromJson(Map<String, dynamic> json){
+
+  Geo.fromJson(Map<String, dynamic> json) {
     lat = json['lat'];
     lng = json['lng'];
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['lat'] = lat;
-    _data['lng'] = lng;
-    return _data;
+    final data = <String, dynamic>{};
+    data['lat'] = lat;
+    data['lng'] = lng;
+    return data;
   }
 }
 
@@ -107,18 +106,18 @@ class Company {
   late final String name;
   late final String catchPhrase;
   late final String bs;
-  
-  Company.fromJson(Map<String, dynamic> json){
+
+  Company.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     catchPhrase = json['catchPhrase'];
     bs = json['bs'];
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['name'] = name;
-    _data['catchPhrase'] = catchPhrase;
-    _data['bs'] = bs;
-    return _data;
+    final data = <String, dynamic>{};
+    data['name'] = name;
+    data['catchPhrase'] = catchPhrase;
+    data['bs'] = bs;
+    return data;
   }
 }
