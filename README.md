@@ -1,16 +1,16 @@
-[API will used here](https://jsonplaceholder.typicode.com)
+# api_asg
 
-In this assignment, you will get data from free api.
-The application will have 3 views:
-1. View for display all users
-2. View for display <ins>10 only</ins> of photos
-3. View for display posts <ins>only if userId == 1</ins>.
+A new Flutter project.
 
-## Requirements:
-1. Create a Flutter project and install http package.
-2. Create "model" files.
-3. Create a "networking" folder to organize endpoints.
-4. Implement pages to present data from api.
+## Getting Started
 
-## Note:
-Submission will be on Wednesday at 10:00 am.
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
