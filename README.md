@@ -11,7 +11,7 @@ The purpose of this app is to practice on API the api that used in project from 
  
 - **Display specific quantity of photos**: the app will Display specific quantity of photos based in user choice.
   
-- **Display specific post**: The app will Display specific post based on post id.
+- **Display specific post**: The app will Display specific post based on user id.
   
 - **State Managment**: The app use BLoC State Managment.
 
@@ -60,3 +60,4 @@ The purpose of this app is to practice on API the api that used in project from 
 
 ##
 Fill free to use
+
