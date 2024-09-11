@@ -3,7 +3,7 @@
 <img src="./assets/logo-h.png" alt="Tuwaiq" width="400"/>
 
 # API
-This API program utilizes data from an external API to render various views:
+This API program utilizes data from an external API to render various views and use Bloc:
 
 1. **All Users View**: Displays a comprehensive list of all users retrieved from the external API.
 2. **Limited Photos View**: Shows only 10 photos from the external API.
@@ -60,8 +60,8 @@ cached_network_image: ^3.2.3
 This app provides three distinct views to retrieve and display data from an HTTP API:
 
 1. `All Users View`: This view presents a list of **all users**. When a user is selected, a bottom sheet appears showing detailed information, including the user's `name`, `username`, `ID`, `email`, `phone` number, `address`, and `company` details.
-`Limited Photos View`: This view displays **only 10 photos**. If there is an error due to server issues, an error icon will be shown.
-`User Posts View`: This view showcases all posts from the **user with ID 1**, including the `title` and `body` of each post.
+2. `Limited Photos View`: This view displays **only 10 photos**. If there is an error due to server issues, an error icon will be shown.
+3. `User Posts View`: This view showcases all posts from the **user with ID 1**, including the `title` and `body` of each post.
 ## OutPut
 The outcome:
 
