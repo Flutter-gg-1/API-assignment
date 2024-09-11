@@ -41,7 +41,7 @@ class CustomePostById extends StatelessWidget {
               ),
             );
           }
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         });
   }
 }
