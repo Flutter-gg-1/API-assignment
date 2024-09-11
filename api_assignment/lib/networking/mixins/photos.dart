@@ -19,4 +19,19 @@ mixin PhotosApi on ApiConstant {
     }
     return allPhotos;
   }
+
+  // display posts only if userId == 1.
+  Future<List<PhotosModel>> displayPhotosByUserId(int userId) async {
+    // 1- Convert URL to URI
+    final uri = Uri.parse('$baseUrl$photosEndpoint?id=$userId');
+    // 2- Send Request(GET, POST, PUT, DELETE)
+    final response = await http.get(uri);
+    // 3- Decode Response String to JSON(Map)
+    final responseDecoded = jsonDecode(response.body);
+    // 4- Convert JSON(Map) to Model(Object)
+    for (var element in responseDecoded) {
+      allPhotos.add(PhotosModel.fromJson(element));
+    }
+    return allPhotos;
+  }
 }
