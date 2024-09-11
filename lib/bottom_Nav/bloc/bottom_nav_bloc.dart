@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:apiasswignment/src/firstscrean.dart';
 import 'package:apiasswignment/src/pics.dart';
+import 'package:apiasswignment/src/post.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class BottomNavBloc extends Bloc<BottomNavEvent, BottomNavState> {
   List<Widget> views = [
     Firstscrean(),
     PicsScreen(),
+    PostScreen()
   ];
   int currentIndex = 0;
   BottomNavBloc() : super(BottomNavInitial()) {

@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class Firstscrean extends StatelessWidget {
   Firstscrean({super.key});
   final futureApi = ApiNetworking();
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
