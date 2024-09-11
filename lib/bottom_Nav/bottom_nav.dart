@@ -22,11 +22,11 @@ class BottomNavScreen extends StatelessWidget {
                   },
                   items: const [
                     BottomNavigationBarItem(
-                        icon: Icon(Icons.home), label: "Home"),
+                        icon: Icon(Icons.home), label: "Users"),
                     BottomNavigationBarItem(
-                        icon: Icon(Icons.settings), label: "Settings"),
+                        icon: Icon(Icons.cabin), label: "Images"),
                     BottomNavigationBarItem(
-                        icon: Icon(Icons.person_2_outlined), label: "Profile")
+                        icon: Icon(Icons.qr_code), label: "posts")
                   ]),
               body: bloc.views[bloc.currentIndex],
             );

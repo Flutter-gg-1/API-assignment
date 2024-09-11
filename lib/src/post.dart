@@ -30,13 +30,19 @@ class PostScreen extends StatelessWidget {
                     posts.where((post) => post.userId == 1).toList();
 
                 if (filteredPosts.isNotEmpty) {
-                  return ListView.builder(
+                  return ListView.separated(
                     itemCount: filteredPosts.length,
                     itemBuilder: (context, index) {
                       final post = filteredPosts[index];
                       return ListTile(
                         title: Text("${post.title}"),
                         subtitle: Text(post.body),
+                      );
+                    },
+                    separatorBuilder: (context, index) {
+                      return const Divider(
+                        thickness: 1.0,
+                        color: Colors.grey,
                       );
                     },
                   );
