@@ -18,4 +18,4 @@ This project is a Flutter application that retrieves and displays data from a pu
 ## GIF
 
 
-![ScreenRecording1446-03-08at5 55 05AM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/af945e37-40b3-4204-8b47-73e33816c276)
+![ScreenRecording1446-03-08at7 17 37AM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/782b1dec-9048-43c5-abdd-b46d598fb147)
