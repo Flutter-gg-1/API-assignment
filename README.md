@@ -20,7 +20,7 @@ The purpose of this app is to practice on API the api that used in project from 
 ### Main Widgets
 - **TextField**: The `TextField` widget is used to allow users to input text.
 
-- **ListTile**: The `ListTile` widget is used to display a list of users with an avatar, name, email, and a trailing icon.
+- **ListTile**: The `ListTile` widget is used to display a list of users with name, email, and a trailing company name and leading with user id.
 
 ### External Packages
 - **Cached network image**: A flutter library to show images from the internet and keep them in the cache directory.
@@ -60,4 +60,3 @@ The purpose of this app is to practice on API the api that used in project from 
 
 ##
 Fill free to use
-
