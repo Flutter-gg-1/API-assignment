@@ -1,4 +1,5 @@
 import 'package:api_assignment/bloc/phto_bloc/Photos_bloc.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,7 +15,20 @@ class Page2 extends StatelessWidget {
         bloc.add(ShowPhotosEvent());
         return Scaffold(
           backgroundColor: const Color.fromARGB(255, 160, 138, 71),
-          body: Container(),
+          body: BlocBuilder<PhotosBloc, PhotosState>(
+            builder: (context, state) {
+              if (state is ShowPhotosState) {
+                return ListView(
+                    children: List.generate(
+                  bloc.api.allPhotos.length,
+                  (index) => Card(
+                    child: Image.network(bloc.api.allPhotos[index].url),
+                  ),
+                ));
+              }
+              return const Center(child: CircularProgressIndicator());
+            },
+          ),
         );
       }),
     );
