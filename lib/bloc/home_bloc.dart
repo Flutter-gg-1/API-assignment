@@ -13,7 +13,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final api = NetworkingApi();
   List<UserModel> users = [];
   List<PhotoModel> photos = [];
-  late PostModel posts;
+  List<PostModel>  posts = [];
   HomeBloc() : super(HomeInitial()) {
     on<HomeEvent>((event, emit) {});
     on<ShowUserEvent>((event, emit) async {
@@ -40,7 +40,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<ShowPostEvent>((event, emit) async {
       try {
         emit(LoadingState());
-        posts = await api.getPost(id: event.id);
+        posts = await api.getPost(userId: event.id);
 
         emit(ShowPostSucessfullyState(posts: posts));
       } catch (erorr) {

@@ -18,7 +18,7 @@ final class ShowPhotoSucessfullyState extends HomeState {
 }
 
 final class ShowPostSucessfullyState extends HomeState {
-  final PostModel posts;
+  final List<PostModel> posts;
 
   ShowPostSucessfullyState({required this.posts});
 

@@ -21,7 +21,7 @@ class PostScreen extends StatelessWidget {
                 keyboardType: const TextInputType.numberWithOptions(),
                 controller: controller,
                 decoration: const InputDecoration(
-                  hintText: 'Enter Post id',
+                  hintText: 'Enter user id',
                   border: OutlineInputBorder(),
                 ),
                 onSubmitted: (value) =>
@@ -31,24 +31,46 @@ class PostScreen extends StatelessWidget {
                 builder: (context, state) {
                   if (state is ShowPostSucessfullyState) {
                     return SingleChildScrollView(
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          margin: const EdgeInsets.only(top: 30),
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 179, 202, 219),
-                          borderRadius: BorderRadius.circular(18)),
-                      child: Column(
-                        children: [
-                          Text('Post : ${state.posts.id}',style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.white),),
-                          Text(
-                              '${state.posts.title}\n\n${state.posts.body}\n',
-                              style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.indigo),),
-                          Text(
-                              'by User : ${state.posts.userId}\n',
-                              style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.grey),),
-                        ],
-                      ),
+                        child: Column(
+                      children: state.posts
+                          .map(
+                            (e) => Container(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
+                              margin: const EdgeInsets.only(top: 30),
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                  color:
+                                      const Color.fromARGB(255, 179, 202, 219),
+                                  borderRadius: BorderRadius.circular(18)),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'Post : ${e.id}',
+                                    style: const TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  ),
+                                  Text(
+                                    '${e.title}\n\n${e.body}\n',
+                                    style: const TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.indigo),
+                                  ),
+                                  Text(
+                                    'by User : ${e.userId}\n',
+                                    style: const TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.grey),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                          .toList(),
                     ));
                   }
                   return Center(
