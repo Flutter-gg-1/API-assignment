@@ -1,6 +1,6 @@
 import 'package:api_flutter/model/post_model.dart';
 import 'package:api_flutter/networking/network_api.dart';
-import 'package:api_flutter/widget/custome_byid,dart';
+import 'package:api_flutter/widget/custome_byid.dart';
 import 'package:api_flutter/widget/custome_photos.dart';
 import 'package:api_flutter/widget/custome_users_data.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +45,7 @@ class HomeScreen extends StatelessWidget {
                   CustomePhotos(api: api),
                   CustomePostById(
                     index: 1,
+                    api: api,
                   ),
                 ],
               ),

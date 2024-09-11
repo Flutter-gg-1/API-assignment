@@ -10,8 +10,8 @@ mixin UserMethod on Constans {
     final response = await http.get(Uri.parse(url + userEndpoint));
     List<Map<String, dynamic>> bodym =
         List.from(jsonDecode(response.body)).cast<Map<String, dynamic>>();
-        //to print all data response.body
-        //to print status code response.statusCode
+    //to print all data response.body
+    //to print status code response.statusCode
     List<Users> user = [];
     for (var element in bodym) {
       user.add(Users.fromJson(element));

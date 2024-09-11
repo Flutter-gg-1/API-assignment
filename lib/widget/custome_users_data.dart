@@ -15,13 +15,16 @@ class CustomeUsers extends StatelessWidget {
     return FutureBuilder(
         future: api.allUsers(),
         builder: (context, dataForm) {
-          List users = dataForm.data as List;
+          if (dataForm.connectionState == ConnectionState.waiting ||
+              dataForm.data == null) {
+            CircularProgressIndicator;
+          }
           if (dataForm.hasData) {
             return SizedBox(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.84,
               child: ListView.builder(
-                itemCount: users.length,
+                itemCount: dataForm.data!.length,
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
