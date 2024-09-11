@@ -1,16 +1,15 @@
-[API will used here](https://jsonplaceholder.typicode.com)
+# Flutter App: User, Photos, and Posts Viewer
 
-In this assignment, you will get data from free api.
-The application will have 3 views:
-1. View for display all users
-2. View for display <ins>10 only</ins> of photos
-3. View for display posts <ins>only if userId == 1</ins>.
+This Flutter application demonstrates how to fetch and display data from APIs using the BLoC (Business Logic Component) pattern. The app consists of three main screens where users can view a list of users, photos, and posts.
 
-## Requirements:
-1. Create a Flutter project and install http package.
-2. Create "model" files.
-3. Create a "networking" folder to organize endpoints.
-4. Implement pages to present data from api.
+## Features
 
-## Note:
-Submission will be on Wednesday at 10:00 am.
+- **User Screen**: Displays a list of users fetched from an API using BLoC.
+- **Photos Screen**: Displays a grid of photos with smooth animations, fetched from an API.
+- **Posts Screen**: Displays a list of posts fetched from an API using BLoC.
+- **Gradient Background**: All screens have a visually appealing gradient background.
+- **Animated Transitions**: Smooth animations enhance the user experience when displaying content.
+
+## Screenrecord
+
+<img src="assets/screen-record.gif" width="300"/>
