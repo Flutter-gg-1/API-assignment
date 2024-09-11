@@ -1,6 +1,6 @@
 # Posts App
 
-![Uploading 030155c6af764fbaa5b7027fc0add1c3.gif…]()
+![030155c6af764fbaa5b7027fc0add1c3](https://github.com/user-attachments/assets/4e84ee4b-dfc5-4713-9ad5-060953a1a146)
 
 ## Overview
 
